@@ -1,13 +1,14 @@
-import { Controller, Get } from '@nestjs/common';
 
-import { AppService } from './app.service';
+import { Controller, Request, Get } from '@nestjs/common';
+
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor() {}
+
 
   @Get()
-  getData() {
-    return this.appService.getData();
+  login(@Request() req): any {
+    return 'Hello';
   }
 }
