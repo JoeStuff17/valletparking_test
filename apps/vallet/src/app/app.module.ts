@@ -1,12 +1,13 @@
 import { AppController } from './app.controller';
 import { FileEntity } from './file/entities/file.entity';
-import { Vendor } from './vendors/vendor/entities/vendor.entity';
+import { Vendor } from './admin/vendor/entities/vendor.entity';
 import { Module } from '@nestjs/common';
-import { VendorModule } from './vendors/vendor/vendor.module';
-import { DriverModule } from './driver/driver.module';
+import { VendorModule } from './admin/vendor/vendor.module';
+import { DriverModule } from './admin/driver/driver.module';
 import { CustomersModule } from './customers/customers.module';
 import { FileModule } from './file/file.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { UserModule } from './admin/user/user.module';
 
 @Module({
   imports: [
@@ -17,13 +18,14 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       username: 'root',
       password: '',
       database: 'vallet_parking',
-      entities: [Vendor,FileEntity],
+      entities: [Vendor, FileEntity],
       synchronize: true,
     }),
     VendorModule,
     DriverModule,
     CustomersModule,
     FileModule,
+    UserModule,
     // AppModule,
   ],
   controllers: [AppController],

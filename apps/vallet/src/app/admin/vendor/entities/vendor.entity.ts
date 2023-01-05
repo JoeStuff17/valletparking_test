@@ -9,8 +9,6 @@ import {
 } from 'typeorm';
 import { FileEntity } from '../../../file/entities/file.entity';
 
-
-
 @Entity({ name: 'vendors' })
 export class Vendor {
   @PrimaryGeneratedColumn()
@@ -40,15 +38,15 @@ export class Vendor {
   @Column()
   pincode: number;
 
-  @Column({ type: 'bigint' })
-  panNO: number;
+  @Column()
+  panNO: string;
 
   @OneToOne(() => FileEntity)
   @JoinColumn()
   panImage: FileEntity;
 
-  @Column({ type: 'bigint' })
-  gstNo: number;
+  @Column()
+  gstNo: string;
 
   @OneToOne(() => FileEntity)
   @JoinColumn()
@@ -62,5 +60,4 @@ export class Vendor {
 
   @UpdateDateColumn()
   updatedAt: Date;
-
 }
