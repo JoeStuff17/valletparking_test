@@ -1,7 +1,7 @@
 import { IsString } from "@nestjs/class-validator";
 import { IsBoolean, IsNumber } from "@nestjs/class-validator/types/decorator/decorators";
 
-export class VendorsDto {
+export class CreateVendorDto {
     
     @IsString()
     fullName: string;

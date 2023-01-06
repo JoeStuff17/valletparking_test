@@ -1,6 +1,6 @@
 import { IsNumber, IsString } from "@nestjs/class-validator";
 
-export class TransactionDto {
+export class CreateTransactionDto {
 
     @IsNumber()
     bookingId: number;

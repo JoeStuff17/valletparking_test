@@ -8,14 +8,15 @@ import {
   Delete,
 } from '@nestjs/common';
 import { DisputesService } from './disputes.service';
-import { DisputeDto } from './dto/dispute.dto';
+import { CreateDisputeDto } from './dto/dispute.dto';
+import { UpdateDisputeDto } from './dto/update-dispute.dto';
 
 @Controller('disputes')
 export class DisputesController {
   constructor(private readonly disputesService: DisputesService) {}
 
   @Post()
-  create(@Body() createDisputeDto: DisputeDto) {
+  create(@Body() createDisputeDto: CreateDisputeDto) {
     return this.disputesService.create(createDisputeDto);
   }
 
@@ -29,7 +30,10 @@ export class DisputesController {
     return this.disputesService.findOne(+id);
   }
 
- 
+  @Patch(':id')
+  update(@Param('id') id: string, @Body() updateDisputeDto: UpdateDisputeDto) {
+    return this.disputesService.update(+id, updateDisputeDto);
+  }
 
   @Delete(':id')
   remove(@Param('id') id: string) {

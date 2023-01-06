@@ -1,9 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { ParkingAreaDto } from './dto/parking-area.dto';
+import { CreateParkingAreaDto } from './dto/parking-area.dto';
+import { UpdateParkingAreaDto } from './dto/update-parking-area.dto';
 
 @Injectable()
 export class ParkingAreaService {
-  create(ParkingAreaDto: ParkingAreaDto) {
+  create(createParkingAreaDto: CreateParkingAreaDto) {
     return 'This action adds a new parkingArea';
   }
 
@@ -13,6 +14,10 @@ export class ParkingAreaService {
 
   findOne(id: number) {
     return `This action returns a #${id} parkingArea`;
+  }
+
+  update(id: number, updateParkingAreaDto: UpdateParkingAreaDto) {
+    return `This action updates a #${id} parkingArea`;
   }
 
   remove(id: number) {

@@ -1,6 +1,6 @@
 import { IsBoolean, IsNumber, IsString } from "@nestjs/class-validator";
 
-export class DisputeDto {
+export class CreateDisputeDto {
 
     @IsString()
     remarks: string;
