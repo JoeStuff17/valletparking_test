@@ -1,6 +1,8 @@
+import { VendorUserEntity } from './../../../vendor/vendor-user/entities/vendor-user.entity';
 import {
   Column,
   CreateDateColumn,
+  OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -9,8 +11,11 @@ export class ParkingLocationEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
-  vendorId: number;
+  @OneToOne(
+    (type) => VendorUserEntity,
+    (vendorUser: VendorUserEntity) => vendorUser.id
+  )
+  vendorUserId: VendorUserEntity;
 
   @Column()
   name: string;
