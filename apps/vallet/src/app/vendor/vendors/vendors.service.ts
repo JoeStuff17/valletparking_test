@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { CreateVendorDto } from './dto/vendors.dto';
+import { VendorsDto } from './dto/vendors.dto';
 
 
 @Injectable()
 export class VendorsService {
-  create(createVendorDto: CreateVendorDto) {
+  create(VendorsDto: VendorsDto) {
     return 'This action adds a new vendor';
   }
 

@@ -1,10 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { CreateDriverDto } from './dto/vendor-driver.dto';
-import { UpdateDriverDto } from './dto/update-driver.dto';
+import { VendorDriverDto } from './dto/vendor-driver.dto';
 
 @Injectable()
 export class VendorDriverService {
-  create(createDriverDto: CreateDriverDto) {
+  create(vendorDriverDto: VendorDriverDto) {
     return 'This action adds a new driver';
   }
 
@@ -16,9 +15,7 @@ export class VendorDriverService {
     return `This action returns a #${id} driver`;
   }
 
-  update(id: number, updateDriverDto: UpdateDriverDto) {
-    return `This action updates a #${id} driver`;
-  }
+
 
   remove(id: number) {
     return `This action removes a #${id} driver`;

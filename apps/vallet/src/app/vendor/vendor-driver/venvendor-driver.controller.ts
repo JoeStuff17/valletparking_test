@@ -8,16 +8,15 @@ import {
   Delete,
 } from '@nestjs/common';
 import { VendorDriverService } from './vendor-driver.service';
-import { CreateDriverDto } from './dto/vendor-driver.dto';
-import { UpdateDriverDto } from './dto/update-driver.dto';
+import { VendorDriverDto } from './dto/vendor-driver.dto';
 
 @Controller('driver')
 export class VendorDriverController {
   constructor(private readonly VendorDriverService: VendorDriverService) {}
 
   @Post()
-  create(@Body() createDriverDto: CreateDriverDto) {
-    return this.VendorDriverService.create(createDriverDto);
+  create(@Body() vendorDriverDto: VendorDriverDto) {
+    return this.VendorDriverService.create(vendorDriverDto);
   }
 
 }

@@ -8,7 +8,7 @@ import {
   Delete,
 } from '@nestjs/common';
 import { ParkingPriceService } from './parking-price.service';
-import { CreateParkingPriceDto } from './dto/parking-price.dto';
+import { ParkingPriceDto } from './dto/parking-price.dto';
 
 
 @Controller('parking-price')
@@ -16,7 +16,7 @@ export class ParkingPriceController {
   constructor(private readonly parkingPriceService: ParkingPriceService) {}
 
   @Post()
-  create(@Body() createParkingPriceDto: CreateParkingPriceDto) {
+  create(@Body() createParkingPriceDto: ParkingPriceDto) {
     return this.parkingPriceService.create(createParkingPriceDto);
   }
 }

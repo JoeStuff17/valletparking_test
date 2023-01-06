@@ -8,14 +8,14 @@ import {
   Delete,
 } from '@nestjs/common';
 import { ParkingAreaService } from './parking-area.service';
-import { CreateParkingAreaDto } from './dto/parking-area.dto';
+import { ParkingAreaDto } from './dto/parking-area.dto';
 
 @Controller('parking-area')
 export class ParkingAreaController {
   constructor(private readonly parkingAreaService: ParkingAreaService) {}
 
   @Post()
-  create(@Body() createParkingAreaDto: CreateParkingAreaDto) {
+  create(@Body() createParkingAreaDto: ParkingAreaDto) {
     return this.parkingAreaService.create(createParkingAreaDto);
   }
 

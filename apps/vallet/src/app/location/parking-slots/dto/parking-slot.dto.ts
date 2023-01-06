@@ -1,7 +1,7 @@
 import { IsEnum, IsNumber } from "@nestjs/class-validator";
 import { SlotType, vechileType } from "../entities/parking-slot.entity";
 
-export class CreateParkingSlotDto {
+export class ParkingSlotDto {
     @IsNumber()
     areaId: number;
 

@@ -8,16 +8,15 @@ import {
   Delete,
 } from '@nestjs/common';
 import { ParkingSlotsService } from './parking-slots.service';
-import { CreateParkingSlotDto } from './dto/parking-slot.dto';
-import { UpdateParkingSlotDto } from './dto/update-parking-slot.dto';
+import { ParkingSlotDto } from './dto/parking-slot.dto';
 
 @Controller('parking-slots')
 export class ParkingSlotsController {
   constructor(private readonly parkingSlotsService: ParkingSlotsService) {}
 
   @Post()
-  create(@Body() createParkingSlotDto: CreateParkingSlotDto) {
-    return this.parkingSlotsService.create(createParkingSlotDto);
+  create(@Body() ParkingSlotDto: ParkingSlotDto) {
+    return this.parkingSlotsService.create(ParkingSlotDto);
   }
 
   @Get()
@@ -30,13 +29,6 @@ export class ParkingSlotsController {
     return this.parkingSlotsService.findOne(+id);
   }
 
-  @Patch(':id')
-  update(
-    @Param('id') id: string,
-    @Body() updateParkingSlotDto: UpdateParkingSlotDto
-  ) {
-    return this.parkingSlotsService.update(+id, updateParkingSlotDto);
-  }
 
   @Delete(':id')
   remove(@Param('id') id: string) {

@@ -1,10 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { CreateFileDto } from './dto/file.dto';
-import { UpdateFileDto } from './dto/update-file.dto';
+import { FileDto } from './dto/file.dto';
 
 @Injectable()
 export class FileService {
-  create(createFileDto: CreateFileDto) {
+  create(FileDto: FileDto) {
     return 'This action adds a new file';
   }
 
@@ -16,9 +15,7 @@ export class FileService {
     return `This action returns a #${id} file`;
   }
 
-  update(id: number, updateFileDto: UpdateFileDto) {
-    return `This action updates a #${id} file`;
-  }
+ 
 
   remove(id: number) {
     return `This action removes a #${id} file`;

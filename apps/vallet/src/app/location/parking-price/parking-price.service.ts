@@ -1,10 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { CreateParkingPriceDto } from './dto/parking-price.dto';
-import { UpdateParkingPriceDto } from './dto/update-parking-price.dto';
+import { ParkingPriceDto } from './dto/parking-price.dto';
 
 @Injectable()
 export class ParkingPriceService {
-  create(createParkingPriceDto: CreateParkingPriceDto) {
+  create(ParkingPriceDto: ParkingPriceDto) {
     return 'This action adds a new parkingPrice';
   }
 

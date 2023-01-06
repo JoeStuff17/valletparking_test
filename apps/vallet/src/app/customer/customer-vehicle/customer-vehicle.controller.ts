@@ -8,8 +8,7 @@ import {
   Delete,
 } from '@nestjs/common';
 import { CustomerVehicleService } from './customer-vehicle.service';
-import { CreateCustomerVehicleDto } from './dto/customer-vehicle.dto';
-import { UpdateCustomerVehicleDto } from './dto/update-customer-vehicle.dto';
+import { CustomerVehicleDto } from './dto/customer-vehicle.dto';
 
 @Controller('customer-vehicle')
 export class CustomerVehicleController {
@@ -18,7 +17,7 @@ export class CustomerVehicleController {
   ) {}
 
   @Post()
-  create(@Body() createCustomerVehicleDto: CreateCustomerVehicleDto) {
+  create(@Body() createCustomerVehicleDto: CustomerVehicleDto) {
     return this.customerVehicleService.create(createCustomerVehicleDto);
   }
 
@@ -30,14 +29,6 @@ export class CustomerVehicleController {
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.customerVehicleService.findOne(+id);
-  }
-
-  @Patch(':id')
-  update(
-    @Param('id') id: string,
-    @Body() updateCustomerVehicleDto: UpdateCustomerVehicleDto
-  ) {
-    return this.customerVehicleService.update(+id, updateCustomerVehicleDto);
   }
 
   @Delete(':id')
