@@ -1,6 +1,6 @@
 import { IsBoolean, IsString } from "@nestjs/class-validator";
 
-export class FileDto {
+export class CreateFileDto {
     @IsString()
     path: string;
 

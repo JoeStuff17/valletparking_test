@@ -8,7 +8,7 @@ import {
   Delete,
 } from '@nestjs/common';
 import { ParkingLocationsService } from './parking-locations.service';
-import { ParkingLocationDto } from './dto/parking-location.dto';
+import { CreateParkingLocationDto } from './dto/parking-location.dto';
 
 
 @Controller('parking-locations')
@@ -18,7 +18,7 @@ export class ParkingLocationsController {
   ) {}
 
   @Post()
-  create(@Body() createParkingLocationDto: ParkingLocationDto) {
+  create(@Body() createParkingLocationDto: CreateParkingLocationDto) {
     return this.parkingLocationsService.create(createParkingLocationDto);
   }
 

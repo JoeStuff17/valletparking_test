@@ -1,6 +1,6 @@
 import { IsBoolean, IsInt, IsNumber } from "@nestjs/class-validator";
 
-export class BookingDto {
+export class CreateBookingDto {
 
     @IsInt()
     customerId: number;

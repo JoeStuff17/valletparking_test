@@ -1,9 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { CustomerVehicleDto } from './dto/customer-vehicle.dto';
+import { CreateCustomerVehicleDto } from './dto/customer-vehicle.dto';
+import { UpdateCustomerVehicleDto } from './dto/update-customer-vehicle.dto';
 
 @Injectable()
 export class CustomerVehicleService {
-  create(createCustomerVehicleDto: CustomerVehicleDto) {
+  create(createCustomerVehicleDto: CreateCustomerVehicleDto) {
     return 'This action adds a new customerVehicle';
   }
 
@@ -13,6 +14,10 @@ export class CustomerVehicleService {
 
   findOne(id: number) {
     return `This action returns a #${id} customerVehicle`;
+  }
+
+  update(id: number, updateCustomerVehicleDto: UpdateCustomerVehicleDto) {
+    return `This action updates a #${id} customerVehicle`;
   }
 
   remove(id: number) {
