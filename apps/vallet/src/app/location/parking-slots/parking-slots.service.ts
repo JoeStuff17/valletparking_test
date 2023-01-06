@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { CreateParkingSlotDto } from './dto/create-parking-slot.dto';
+import { CreateParkingSlotDto } from './dto/parking-slot.dto';
 import { UpdateParkingSlotDto } from './dto/update-parking-slot.dto';
 
 @Injectable()

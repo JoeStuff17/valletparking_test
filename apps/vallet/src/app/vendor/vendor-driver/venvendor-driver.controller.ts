@@ -8,7 +8,7 @@ import {
   Delete,
 } from '@nestjs/common';
 import { VendorDriverService } from './vendor-driver.service';
-import { CreateDriverDto } from './dto/create-driver.dto';
+import { CreateDriverDto } from './dto/vendor-driver.dto';
 import { UpdateDriverDto } from './dto/update-driver.dto';
 
 @Controller('driver')

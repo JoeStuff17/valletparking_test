@@ -16,10 +16,10 @@ export class ParkingLocation {
   name: string;
 
   @Column()
-  lat: string;
+  lat: number;
 
   @Column()
-  long: string;
+  long: number;
 
   @Column()
   isActive: boolean;

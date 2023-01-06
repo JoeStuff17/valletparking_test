@@ -8,7 +8,7 @@ import {
   Delete,
 } from '@nestjs/common';
 import { ParkingSlotsService } from './parking-slots.service';
-import { CreateParkingSlotDto } from './dto/create-parking-slot.dto';
+import { CreateParkingSlotDto } from './dto/parking-slot.dto';
 import { UpdateParkingSlotDto } from './dto/update-parking-slot.dto';
 
 @Controller('parking-slots')

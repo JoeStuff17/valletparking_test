@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { CreateDisputeDto } from './dto/create-dispute.dto';
+import { CreateDisputeDto } from './dto/dispute.dto';
 import { UpdateDisputeDto } from './dto/update-dispute.dto';
 
 @Injectable()
