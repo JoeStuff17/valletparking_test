@@ -8,7 +8,7 @@ import {
   Delete,
 } from '@nestjs/common';
 import { FileService } from './file.service';
-import { CreateFileDto } from './dto/create-file.dto';
+import { CreateFileDto } from './dto/file.dto';
 import { UpdateFileDto } from './dto/update-file.dto';
 
 @Controller('file')

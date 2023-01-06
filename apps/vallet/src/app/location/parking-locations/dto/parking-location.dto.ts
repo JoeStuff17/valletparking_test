@@ -1,15 +1,18 @@
 import { IsBoolean, IsNumber, IsString } from "@nestjs/class-validator";
 
-export class CreateCustomerDto {
+export class CreateParkingLocationDto {
+
+    @IsNumber()
+    vendorId: number;
 
     @IsString()
-    fullName: string;
+    name: string;
 
     @IsNumber()
-    mobile: number;
+    lat: number;
 
     @IsNumber()
-    otp: number;
+    long: number;
 
     @IsBoolean()
     isActive: boolean;

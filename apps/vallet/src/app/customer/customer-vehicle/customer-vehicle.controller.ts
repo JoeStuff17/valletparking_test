@@ -8,7 +8,7 @@ import {
   Delete,
 } from '@nestjs/common';
 import { CustomerVehicleService } from './customer-vehicle.service';
-import { CreateCustomerVehicleDto } from './dto/create-customer-vehicle.dto';
+import { CreateCustomerVehicleDto } from './dto/customer-vehicle.dto';
 import { UpdateCustomerVehicleDto } from './dto/update-customer-vehicle.dto';
 
 @Controller('customer-vehicle')

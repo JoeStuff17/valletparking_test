@@ -8,7 +8,7 @@ import {
   Delete,
 } from '@nestjs/common';
 import { BookingsService } from './bookings.service';
-import { CreateBookingDto } from './dto/create-booking.dto';
+import { CreateBookingDto } from './dto/booking.dto';
 import { UpdateBookingDto } from './dto/update-booking.dto';
 
 @Controller('bookings')

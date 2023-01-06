@@ -8,7 +8,7 @@ import {
   Delete,
 } from '@nestjs/common';
 import { DisputesService } from './disputes.service';
-import { CreateDisputeDto } from './dto/create-dispute.dto';
+import { CreateDisputeDto } from './dto/dispute.dto';
 import { UpdateDisputeDto } from './dto/update-dispute.dto';
 
 @Controller('disputes')
