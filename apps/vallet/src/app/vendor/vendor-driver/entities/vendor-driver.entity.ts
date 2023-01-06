@@ -1,3 +1,5 @@
+import { VendorUserEntity } from './../../vendor-user/entities/vendor-user.entity';
+import { ParkingLocationEntity } from './../../../location/parking-locations/entities/parking-location.entity';
 import {
   PrimaryGeneratedColumn,
   Entity,
@@ -26,11 +28,17 @@ export class VendorDriverEntity {
   })
   driverType: DriverType;
 
-  @Column()
-  locationId: number;
+  @OneToOne(
+    (type) => ParkingLocationEntity,
+    (location: ParkingLocationEntity) => location.id
+  )
+  locationId: ParkingLocationEntity;
 
-  @Column()
-  vendorId: number;
+  @OneToOne(
+    (type) => VendorUserEntity,
+    (vendorUser: VendorUserEntity) => vendorUser.id
+  )
+  vendorUserId: VendorUserEntity;
 
   @Column()
   fullName: string;
@@ -47,22 +55,22 @@ export class VendorDriverEntity {
   @Column({ type: 'bigint' })
   aadharNo: number;
 
-  @OneToOne(() => FileEntity)
+  @OneToOne(() => FileEntity, (file: FileEntity) => file.id)
   @JoinColumn()
   aadharFront: FileEntity;
 
-  @OneToOne(() => FileEntity)
+  @OneToOne(() => FileEntity, (file: FileEntity) => file.id)
   @JoinColumn()
   aadharBack: FileEntity;
 
   @Column()
   licenceNo: string;
 
-  @OneToOne(() => FileEntity)
+  @OneToOne(() => FileEntity, (file: FileEntity) => file.id)
   @JoinColumn()
   licenceFrontImg: FileEntity;
 
-  @OneToOne(() => FileEntity)
+  @OneToOne(() => FileEntity, (file: FileEntity) => file.id)
   @JoinColumn()
   licenceBackImg: FileEntity;
 
@@ -79,7 +87,7 @@ export class VendorDriverEntity {
   @Column()
   panCardNo: string;
 
-  @OneToOne(() => FileEntity)
+  @OneToOne(() => FileEntity, (file: FileEntity) => file.id)
   @JoinColumn()
   panCardImg: FileEntity;
 

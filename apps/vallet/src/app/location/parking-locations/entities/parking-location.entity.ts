@@ -5,7 +5,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-export class ParkingLocation {
+export class ParkingLocationEntity {
   @PrimaryGeneratedColumn()
   id: number;
 

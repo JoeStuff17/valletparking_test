@@ -1,8 +1,10 @@
+import { VendorsEntity } from './../../vendors/entities/vendors.entity';
 import {
   Column,
   CreateDateColumn,
   Entity,
   JoinColumn,
+  ManyToOne,
   OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
@@ -14,13 +16,13 @@ export class VendorUserEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
-  vendorId: number;
+  @ManyToOne((type) => VendorsEntity, (vendor: VendorsEntity) => vendor.id)
+  vendorId: VendorsEntity;
 
   @Column()
   fullName: string;
 
-  @Column({ type: 'bigint' })
+  @Column({ type: 'bigint', unique: true })
   mobileNo: number;
 
   @Column()
@@ -38,7 +40,7 @@ export class VendorUserEntity {
   @Column()
   panNO: string;
 
-  @OneToOne(() => FileEntity)
+  @OneToOne(() => FileEntity, (file: FileEntity) => file.id)
   @JoinColumn()
   panImage: FileEntity;
 

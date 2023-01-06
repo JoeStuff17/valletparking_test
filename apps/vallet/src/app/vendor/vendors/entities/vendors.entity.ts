@@ -17,13 +17,13 @@ export class VendorsEntity {
   @Column()
   fullName: string;
 
-  @Column({ type: 'bigint' })
+  @Column({ type: 'bigint', unique: true })
   phoneNo: number;
 
   @Column()
   otp: number;
 
-  @Column()
+  @Column({ unique: true })
   email: string;
 
   @Column()
@@ -32,17 +32,17 @@ export class VendorsEntity {
   @Column()
   pincode: number;
 
-  @Column()
+  @Column({ unique: true })
   panNO: string;
 
-  @OneToOne(() => FileEntity)
+  @OneToOne((type) => FileEntity, (file: FileEntity) => file.id)
   @JoinColumn()
   panImage: FileEntity;
 
-  @Column()
+  @Column({ unique: true })
   gstNo: string;
 
-  @OneToOne(() => FileEntity)
+  @OneToOne(() => FileEntity, (file: FileEntity) => file.id)
   @JoinColumn()
   gstDocument: FileEntity;
 
